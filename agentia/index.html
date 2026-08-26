@@ -24,17 +24,40 @@
 
   <div class="page-container">
 
-    <!-- Top Header Navigation -->
-    <header class="main-header reveal-on-scroll">
-      <a href="../index.html" class="return-hub-btn" style="padding: 4px 14px; font-size: 0.7rem; box-shadow: none;">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span data-es="Portafolio" data-en="Portfolio">Portafolio</span>
-      </a>
-      <div class="header-actions">
+    <!-- Top Brand & Language Strip -->
+    <div class="top-header-strip reveal-on-scroll">
+      <img src="../assets/logos/LOGO HORIZONTAL.png" alt="BPM Consulting" class="top-brand-logo" onerror="this.src='../assets/logos/logo-horizontal-color.png'">
+      <div class="lang-toggle-group">
         <button class="lang-pill-btn" data-set-lang="es">🇨🇴 ES</button>
         <button class="lang-pill-btn" data-set-lang="en">🇺🇸 EN</button>
       </div>
-    </header>
+    </div>
+
+    <!-- Persistent Mobile App Segmented Switcher (Tabs) -->
+    <nav class="app-nav-container reveal-on-scroll">
+      <div class="app-nav-bar">
+        <a href="../index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span data-es="🌟 Hub" data-en="🌟 Hub">🌟 Hub</span>
+        </a>
+        <a href="index.html" class="app-tab-item active-tab">
+          <span class="tab-dot"></span>
+          <span>🤖 Be AgentIA</span>
+        </a>
+        <a href="../bpo-nearshore/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🌐 BPO Nearshore</span>
+        </a>
+        <a href="../feel/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🧾 FEEL (DIAN)</span>
+        </a>
+        <a href="../elp/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>💳 ELP Pagos</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- ==========================================================================
          PRODUCT HERO: BE AGENTIA (TOP CONVERSION PRIORITY)
@@ -45,8 +68,8 @@
         <span data-es="IA Cognitiva &amp; Automatización CX" data-en="Cognitive AI &amp; CX Automation">IA Cognitiva &amp; Automatización CX</span>
       </span>
       <img src="../assets/logos/agentia-logo.png" alt="Be AgentIA" class="hero-logo-frame" onerror="this.src='../assets/logos/agentia-portada.png'">
-      <h1 class="hero-headline" data-es="Inteligencia Artificial <span class='highlight'>Be AgentIA</span>" data-en="Artificial Intelligence <span class='highlight'>Be AgentIA</span>">
-        Inteligencia Artificial <span class="highlight">Be AgentIA</span>
+      <h1 class="hero-headline" data-es="Inteligencia Artificial <span class='gradient-text'>Be AgentIA</span>" data-en="Artificial Intelligence <span class='gradient-text'>Be AgentIA</span>">
+        Inteligencia Artificial <span class="gradient-text">Be AgentIA</span>
       </h1>
       <p class="hero-lead-text" data-es="Transformamos la atención de tu empresa en una experiencia hiper-personalizada 24/7. Agentes con memoria contextual, autoentrenamiento con tus manuales y transferencia humana inteligente." data-en="Transforming enterprise support into a hyper-personalized 24/7 experience. Agents with persistent context memory, manual self-training, and smart human handoff.">
         Transformamos la atención de tu empresa en una experiencia hiper-personalizada 24/7. Agentes con memoria contextual, autoentrenamiento con tus manuales y transferencia humana inteligente.
@@ -108,7 +131,7 @@
             <div class="chat-sim-state"><span class="status-dot-pulse"></span> <span data-es="Conectado · Enrutamiento Activo" data-en="Online · Context Memory Active">Conectado · Enrutamiento Activo</span></div>
           </div>
         </div>
-        <span class="showcase-tag" style="background: rgba(123, 49, 129, 0.12); color: var(--brand-magenta); border-color: rgba(123, 49, 129, 0.25);">Demo Widget</span>
+        <span class="showcase-tag" style="background: rgba(123, 49, 129, 0.12); color: var(--brand-agentia-magenta); border-color: rgba(123, 49, 129, 0.25);">Demo Widget</span>
       </div>
 
       <div class="chat-sim-body">

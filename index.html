@@ -24,23 +24,49 @@
 
   <div class="page-container">
 
-    <!-- Top Header Navigation -->
-    <header class="main-header reveal-on-scroll">
-      <img src="assets/logos/LOGO HORIZONTAL.png" alt="BPM Consulting" class="brand-header-logo" onerror="this.src='assets/logos/logo-horizontal-color.png'">
-      <div class="header-actions">
+    <!-- Top Brand & Language Strip -->
+    <div class="top-header-strip reveal-on-scroll">
+      <img src="assets/logos/LOGO HORIZONTAL.png" alt="BPM Consulting" class="top-brand-logo" onerror="this.src='assets/logos/logo-horizontal-color.png'">
+      <div class="lang-toggle-group">
         <button class="lang-pill-btn" data-set-lang="es">🇨🇴 ES</button>
         <button class="lang-pill-btn" data-set-lang="en">🇺🇸 EN</button>
       </div>
-    </header>
+    </div>
+
+    <!-- Persistent Mobile App Segmented Switcher (Tabs) -->
+    <nav class="app-nav-container reveal-on-scroll">
+      <div class="app-nav-bar">
+        <a href="index.html" class="app-tab-item active-tab">
+          <span class="tab-dot"></span>
+          <span data-es="🌟 Hub" data-en="🌟 Hub">🌟 Hub</span>
+        </a>
+        <a href="agentia/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🤖 Be AgentIA</span>
+        </a>
+        <a href="bpo-nearshore/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🌐 BPO Nearshore</span>
+        </a>
+        <a href="feel/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🧾 FEEL (DIAN)</span>
+        </a>
+        <a href="elp/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>💳 ELP Pagos</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- Main Hub Hero (PRODUCT-FIRST) -->
     <section class="hero-product-card reveal-on-scroll">
       <span class="product-eyebrow-badge">
         <span class="live-dot"></span>
-        <span data-es="Portafolio Corporativo" data-en="Enterprise Portfolio">Portafolio Corporativo</span>
+        <span data-es="Portafolio Digital de Soluciones" data-en="Digital Solutions Portfolio">Portafolio Digital de Soluciones</span>
       </span>
-      <h1 class="hero-headline" data-es="Ecosistema de Soluciones <span class='highlight'>BPM Consulting</span>" data-en="Enterprise Solutions Ecosystem <span class='highlight'>BPM Consulting</span>">
-        Ecosistema de Soluciones <span class="highlight">BPM Consulting</span>
+      <h1 class="hero-headline" data-es="Ecosistema de Soluciones <span class='gradient-text'>BPM Consulting</span>" data-en="Enterprise Solutions <span class='gradient-text'>BPM Consulting</span>">
+        Ecosistema de Soluciones <span class="gradient-text">BPM Consulting</span>
       </h1>
       <p class="hero-lead-text" data-es="Combinamos 20+ años de trayectoria operativa, talento humano de excelencia y tecnología de Inteligencia Artificial para potenciar la rentabilidad y experiencia de tu negocio." data-en="Combining 20+ years of operational excellence, world-class talent, and Artificial Intelligence to scale your business profitability and customer experience.">
         Combinamos 20+ años de trayectoria operativa, talento humano de excelencia y tecnología de Inteligencia Artificial para potenciar la rentabilidad y experiencia de tu negocio.
@@ -48,9 +74,9 @@
 
       <!-- Key Commercial Takeaway Pills -->
       <div class="key-value-chips-row">
-        <span class="value-chip">⚡ Implementación Ágil</span>
+        <span class="value-chip">⚡ Implementación en 48h</span>
         <span class="value-chip">🔒 Seguridad ISO 27001</span>
-        <span class="value-chip">📈 +35% Conversión</span>
+        <span class="value-chip">📈 +35% Conversión Comercial</span>
         <span class="value-chip">🤝 Respaldo de 20+ Años</span>
       </div>
 
@@ -65,15 +91,15 @@
     <div class="kpi-row reveal-on-scroll">
       <div class="kpi-card">
         <div class="kpi-number">+20</div>
-        <div class="kpi-label" data-es="Años de Liderazgo" data-en="Years Leadership">Años de Liderazgo</div>
+        <div class="kpi-label" data-es="Años Liderazgo" data-en="Years Leadership">Años Liderazgo</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number">1,064</div>
-        <div class="kpi-label" data-es="Posiciones Operativas" data-en="Operational Seats">Posiciones Operativas</div>
+        <div class="kpi-label" data-es="Posiciones" data-en="Seats">Posiciones</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number">2.34%</div>
-        <div class="kpi-label" data-es="Rotación (Menor Mercado)" data-en="Lowest Turnover">Rotación (Menor Mercado)</div>
+        <div class="kpi-label" data-es="Menor Rotación" data-en="Lowest Turnover">Menor Rotación</div>
       </div>
     </div>
 
@@ -92,7 +118,7 @@
         <div class="showcase-content">
           <div class="showcase-title-row">
             <span>Be AgentIA</span>
-            <span class="showcase-tag" style="background: rgba(123, 49, 129, 0.1); color: var(--brand-magenta); border-color: rgba(123, 49, 129, 0.25);">IA &amp; Automatización</span>
+            <span class="showcase-tag" style="background: rgba(123, 49, 129, 0.1); color: var(--brand-agentia-magenta); border-color: rgba(123, 49, 129, 0.25);">IA &amp; Automatización</span>
           </div>
           <p class="showcase-description" data-es="Asistente virtual contextual con memoria conversacional continua, transferencia fluida a humanos y base de conocimiento dinámica." data-en="Contextual conversational AI with persistent session memory, smart human handover, and dynamic knowledge base.">
             Asistente virtual contextual con memoria conversacional continua, transferencia fluida a humanos y base de conocimiento dinámica.
@@ -111,7 +137,7 @@
         <div class="showcase-content">
           <div class="showcase-title-row">
             <span>BPO Nearshore</span>
-            <span class="showcase-tag" style="background: rgba(27, 79, 156, 0.1); color: var(--brand-navy); border-color: rgba(27, 79, 156, 0.25);">Contact Center &amp; CX</span>
+            <span class="showcase-tag" style="background: rgba(27, 79, 156, 0.1); color: var(--brand-bpo-navy); border-color: rgba(27, 79, 156, 0.25);">Contact Center &amp; CX</span>
           </div>
           <p class="showcase-description" data-es="Operaciones de alto rendimiento desde Colombia: 1,064 posiciones (Sedes Toberín y Zona Franca), infraestructura CCaaS y talento calificado." data-en="High-performance contact center operations from Colombia: 1,064 seats (Toberín &amp; Free Zone), CCaaS tech and top talent.">
             Operaciones de alto rendimiento desde Colombia: 1,064 posiciones (Sedes Toberín y Zona Franca), infraestructura CCaaS y talento calificado.

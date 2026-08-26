@@ -24,17 +24,40 @@
 
   <div class="page-container">
 
-    <!-- Top Header Navigation -->
-    <header class="main-header reveal-on-scroll">
-      <a href="../index.html" class="return-hub-btn" style="padding: 4px 14px; font-size: 0.7rem; box-shadow: none;">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span data-es="Portafolio" data-en="Portfolio">Portafolio</span>
-      </a>
-      <div class="header-actions">
+    <!-- Top Brand & Language Strip -->
+    <div class="top-header-strip reveal-on-scroll">
+      <img src="../assets/logos/LOGO HORIZONTAL.png" alt="BPM Consulting" class="top-brand-logo" onerror="this.src='../assets/logos/logo-horizontal-color.png'">
+      <div class="lang-toggle-group">
         <button class="lang-pill-btn" data-set-lang="es">🇨🇴 ES</button>
         <button class="lang-pill-btn" data-set-lang="en">🇺🇸 EN</button>
       </div>
-    </header>
+    </div>
+
+    <!-- Persistent Mobile App Segmented Switcher (Tabs) -->
+    <nav class="app-nav-container reveal-on-scroll">
+      <div class="app-nav-bar">
+        <a href="../index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span data-es="🌟 Hub" data-en="🌟 Hub">🌟 Hub</span>
+        </a>
+        <a href="../agentia/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🤖 Be AgentIA</span>
+        </a>
+        <a href="../bpo-nearshore/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🌐 BPO Nearshore</span>
+        </a>
+        <a href="../feel/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🧾 FEEL (DIAN)</span>
+        </a>
+        <a href="index.html" class="app-tab-item active-tab">
+          <span class="tab-dot"></span>
+          <span>💳 ELP Pagos</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- ==========================================================================
          PRODUCT HERO: EN LÍNEA PAGOS (TOP CONVERSION PRIORITY)
@@ -45,8 +68,8 @@
         <span data-es="Pasarela Fintech &amp; Recaudo Omnicanal" data-en="Omnichannel Fintech Payment Gateway">Pasarela Fintech &amp; Recaudo Omnicanal</span>
       </span>
       <img src="../assets/logos/elp-logo.png" alt="En Línea Pagos ELP Oficial" class="hero-logo-frame" style="max-height: 80px;" onerror="this.src='../assets/logos/elp-logo.svg'">
-      <h1 class="hero-headline" data-es="Pasarela <span class='highlight'>En Línea Pagos (ELP)</span>" data-en="Payment Gateway <span class='highlight'>ELP By BPM</span>">
-        Pasarela <span class="highlight">En Línea Pagos (ELP)</span>
+      <h1 class="hero-headline" data-es="Pasarela <span class='gradient-text'>En Línea Pagos (ELP)</span>" data-en="Payment Gateway <span class='gradient-text'>ELP By BPM</span>">
+        Pasarela <span class="gradient-text">En Línea Pagos (ELP)</span>
       </h1>
       <p class="hero-lead-text" data-es="Incrementa la conversión de tus cobros y recaudos con checkout sin fricción, integración directa con todos los bancos por PSE, links de pago por WhatsApp y protección antifraude con IA." data-en="Boost your payment conversion with frictionless checkout, direct PSE bank debit integration, WhatsApp payment links, and AI-powered anti-fraud protection.">
         Incrementa la conversión de tus cobros y recaudos con checkout sin fricción, integración directa con todos los bancos por PSE, links de pago por WhatsApp y protección antifraude con IA.

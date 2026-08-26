@@ -24,17 +24,40 @@
 
   <div class="page-container">
 
-    <!-- Top Header Navigation -->
-    <header class="main-header reveal-on-scroll">
-      <a href="../index.html" class="return-hub-btn" style="padding: 4px 14px; font-size: 0.7rem; box-shadow: none;">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span data-es="Portafolio" data-en="Portfolio">Portafolio</span>
-      </a>
-      <div class="header-actions">
+    <!-- Top Brand & Language Strip -->
+    <div class="top-header-strip reveal-on-scroll">
+      <img src="../assets/logos/LOGO HORIZONTAL.png" alt="BPM Consulting" class="top-brand-logo" onerror="this.src='../assets/logos/logo-horizontal-color.png'">
+      <div class="lang-toggle-group">
         <button class="lang-pill-btn" data-set-lang="es">🇨🇴 ES</button>
         <button class="lang-pill-btn" data-set-lang="en">🇺🇸 EN</button>
       </div>
-    </header>
+    </div>
+
+    <!-- Persistent Mobile App Segmented Switcher (Tabs) -->
+    <nav class="app-nav-container reveal-on-scroll">
+      <div class="app-nav-bar">
+        <a href="../index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span data-es="🌟 Hub" data-en="🌟 Hub">🌟 Hub</span>
+        </a>
+        <a href="../agentia/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🤖 Be AgentIA</span>
+        </a>
+        <a href="index.html" class="app-tab-item active-tab">
+          <span class="tab-dot"></span>
+          <span>🌐 BPO Nearshore</span>
+        </a>
+        <a href="../feel/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>🧾 FEEL (DIAN)</span>
+        </a>
+        <a href="../elp/index.html" class="app-tab-item">
+          <span class="tab-dot"></span>
+          <span>💳 ELP Pagos</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- ==========================================================================
          PRODUCT HERO: BPO NEARSHORE (TOP CONVERSION PRIORITY)
@@ -45,8 +68,8 @@
         <span data-es="Contact Center &amp; CX Nearshore" data-en="Nearshore Contact Center &amp; CX">Contact Center &amp; CX Nearshore</span>
       </span>
       <img src="../assets/logos/LOGO HORIZONTAL.png" alt="BPM BPO Nearshore" class="hero-logo-frame" onerror="this.src='../assets/logos/logo-horizontal-color.png'">
-      <h1 class="hero-headline" data-es="Operaciones BPO <span class='highlight'>Nearshore Colombia</span>" data-en="Nearshore BPO <span class='highlight'>Operations Colombia</span>">
-        Operaciones BPO <span class="highlight">Nearshore Colombia</span>
+      <h1 class="hero-headline" data-es="Operaciones BPO <span class='gradient-text'>Nearshore Colombia</span>" data-en="Nearshore BPO <span class='gradient-text'>Operations Colombia</span>">
+        Operaciones BPO <span class="gradient-text">Nearshore Colombia</span>
       </h1>
       <p class="hero-lead-text" data-es="Diseñamos operaciones de Contact Center y BPO para empresas globales con talento bilingüe de élite, alineación horaria (USA/LATAM) y plataforma omnicanal CCaaS en la nube." data-en="Custom-built contact center and BPO operations for global enterprises with elite bilingual talent, time-zone alignment, and cloud CCaaS infrastructure.">
         Diseñamos operaciones de Contact Center y BPO para empresas globales con talento bilingüe de élite, alineación horaria (USA/LATAM) y plataforma omnicanal CCaaS en la nube.
@@ -99,10 +122,10 @@
       <div class="site-display-panel">
         <img src="../assets/img/Toberin2.png" alt="Sede Operativa" class="site-display-img">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
-          <h3 class="site-display-title" style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--brand-black);">Sede Toberín (Norte de Bogotá)</h3>
-          <span class="showcase-tag site-display-seats" style="background: rgba(27, 79, 156, 0.12); color: var(--brand-navy); border-color: rgba(27, 79, 156, 0.25);">464 Posiciones Operativas</span>
+          <h3 class="site-display-title" style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--color-black);">Sede Toberín (Norte de Bogotá)</h3>
+          <span class="showcase-tag site-display-seats" style="background: rgba(27, 79, 156, 0.12); color: var(--brand-bpo-navy); border-color: rgba(27, 79, 156, 0.25);">464 Posiciones Operativas</span>
         </div>
-        <p class="site-display-desc" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45;">
+        <p class="site-display-desc" style="font-size: 0.8rem; color: var(--color-gray-70); line-height: 1.45;">
           Ubicación estratégica con acceso privilegiado al mejor talento profesional, técnico y bilingüe de Bogotá. Diseñada para operaciones de alta exigencia CX y ventas.
         </p>
       </div>
