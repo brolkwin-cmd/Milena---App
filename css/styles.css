@@ -78,6 +78,11 @@ body[data-product="elp"] {
   -webkit-tap-highlight-color: transparent;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   font-size: 100%;
   scroll-behavior: smooth;
@@ -1637,6 +1642,17 @@ body {
   text-align: center;
 }
 
+.client-trust-section {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--color-gray-10);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-subtle);
+  text-align: center;
+}
+
 .client-trust-title {
   font-family: var(--font-display);
   font-size: 0.68rem;
@@ -1645,31 +1661,47 @@ body {
   letter-spacing: 0.8px;
   color: var(--color-gray-70);
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .client-logo-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  gap: 8px;
 }
 
-.client-logo-cell {
-  height: 38px;
+.client-logo-cell,
+.client-logo-card {
+  height: 44px;
   background: var(--color-gray-05);
   border: 1px solid var(--color-gray-10);
   border-radius: var(--radius-xs);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 6px;
+  padding: 6px 8px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.client-logo-cell img {
+.client-logo-cell img,
+.client-logo-card img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 28px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.72;
+  opacity: 0.75;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.client-logo-cell:hover img,
+.client-logo-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* ==========================================================================
