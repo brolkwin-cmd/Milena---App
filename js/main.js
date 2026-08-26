@@ -40,6 +40,7 @@
     initNeedSelector();
     initLanguage();
     initChatSimulator();
+    initPhotoCarousel();
     initSiteSwitcher();
     initCopyActions();
     initShareAction();
@@ -289,6 +290,151 @@
     });
 
     document.documentElement.lang = lang;
+
+    // Refresh photo carousel caption if present
+    if (typeof window.__refreshCarouselLang === 'function') {
+      window.__refreshCarouselLang();
+    }
+  }
+
+  /* ==========================================================================
+     INFRASTRUCTURE PHOTO CAROUSEL (BPO NEARSHORE & SEDES)
+     ========================================================================== */
+  function initPhotoCarousel() {
+    const carouselBox = document.getElementById('bpo-photo-carousel');
+    if (!carouselBox) return;
+
+    const track = document.getElementById('carousel-track');
+    const slides = carouselBox.querySelectorAll('.carousel-slide');
+    const btnPrev = document.getElementById('carousel-btn-prev');
+    const btnNext = document.getElementById('carousel-btn-next');
+    const dots = carouselBox.querySelectorAll('.carousel-dot');
+    const counterBadge = document.getElementById('carousel-counter');
+    const locBadge = document.getElementById('carousel-badge-loc');
+    const titleEl = document.getElementById('carousel-info-title');
+    const capEl = document.getElementById('carousel-info-cap');
+    const descEl = document.getElementById('carousel-info-desc');
+
+    if (!track || !slides.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlayTimer = null;
+
+    function updateCarousel(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentIndex = index;
+
+      // Move track
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update slide metadata
+      const activeSlide = slides[currentIndex];
+      const lang = currentLang;
+
+      const locText = activeSlide.getAttribute(`data-loc-${lang}`) || activeSlide.getAttribute('data-loc-es') || '';
+      const capText = activeSlide.getAttribute(`data-cap-${lang}`) || activeSlide.getAttribute('data-cap-es') || '';
+      const titleText = activeSlide.getAttribute(`data-title-${lang}`) || activeSlide.getAttribute('data-title-es') || '';
+      const descText = activeSlide.getAttribute(`data-desc-${lang}`) || activeSlide.getAttribute('data-desc-es') || '';
+
+      if (counterBadge) counterBadge.innerText = `${currentIndex + 1} / ${totalSlides}`;
+      if (locBadge) locBadge.innerText = locText;
+      if (capEl) capEl.innerText = capText;
+      if (titleEl) titleEl.innerText = titleText;
+      if (descEl) descEl.innerText = descText;
+
+      // Update dots
+      dots.forEach((dot, dIdx) => {
+        dot.classList.toggle('active', dIdx === currentIndex);
+      });
+    }
+
+    // Expose language refresh callback
+    window.__refreshCarouselLang = () => updateCarousel(currentIndex);
+
+    // Navigation buttons
+    if (btnPrev) {
+      btnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        stopAutoPlay();
+        updateCarousel(currentIndex - 1);
+        startAutoPlay();
+      });
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        stopAutoPlay();
+        updateCarousel(currentIndex + 1);
+        startAutoPlay();
+      });
+    }
+
+    // Dots click
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetIndex = parseInt(dot.getAttribute('data-index'), 10) || 0;
+        stopAutoPlay();
+        updateCarousel(targetIndex);
+        startAutoPlay();
+      });
+    });
+
+    // Touch Swipe Gesture Support
+    let startX = 0;
+    let endX = 0;
+    const viewport = carouselBox.querySelector('.carousel-viewport');
+
+    if (viewport) {
+      viewport.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        stopAutoPlay();
+      }, { passive: true });
+
+      viewport.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', () => {
+        const diffX = startX - endX;
+        if (Math.abs(diffX) > 40 && endX !== 0) {
+          if (diffX > 0) {
+            updateCarousel(currentIndex + 1); // Swipe Left -> Next
+          } else {
+            updateCarousel(currentIndex - 1); // Swipe Right -> Prev
+          }
+        }
+        startX = 0;
+        endX = 0;
+        startAutoPlay();
+      });
+
+      // Pause autoplay on mouse hover (Desktop preview)
+      viewport.addEventListener('mouseenter', stopAutoPlay);
+      viewport.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    // Autoplay Engine
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(() => {
+        updateCarousel(currentIndex + 1);
+      }, 5500);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    // Initialize first slide and start autoplay
+    updateCarousel(0);
+    startAutoPlay();
   }
 
   /* ==========================================================================

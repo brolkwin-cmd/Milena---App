@@ -965,51 +965,194 @@ body {
   color: #FFFFFF;
 }
 
-/* Site Switcher Box */
+/* BPO Infrastructure Photo Carousel & Site Switcher */
 .site-switcher-box {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid var(--color-gray-10);
   border-radius: var(--radius-md);
-  padding: 16px 14px;
+  padding: 14px;
   margin-bottom: 18px;
   box-shadow: var(--shadow-card);
 }
 
-.site-toggle-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-  background: var(--color-gray-05);
-  padding: 3px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 12px;
-}
-
-.site-toggle-btn {
-  padding: 7px 4px;
-  border: none;
-  background: transparent;
-  border-radius: var(--radius-xs);
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
-  cursor: pointer;
-  color: var(--color-gray-70);
-  text-align: center;
-}
-
-.site-toggle-btn.active {
-  background: #FFFFFF;
-  color: var(--color-black);
-  box-shadow: var(--shadow-subtle);
-}
-
-.site-display-img {
+.carousel-viewport {
+  position: relative;
   width: 100%;
-  height: 170px;
+  height: 220px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #0B0E14;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.carousel-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+}
+
+.carousel-top-tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-location-badge {
+  background: rgba(18, 16, 26, 0.75);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 9px;
   border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.3px;
+}
+
+.carousel-counter-badge {
+  background: rgba(0, 191, 252, 0.9);
+  color: var(--color-black);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.5px;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(18, 16, 26, 0.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--color-blue);
+  color: var(--color-black);
+  border-color: var(--color-blue);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.carousel-nav-btn.btn-prev {
+  left: 8px;
+}
+
+.carousel-nav-btn.btn-next {
+  right: 8px;
+}
+
+.carousel-info-box {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.carousel-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.carousel-info-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.25;
+}
+
+.carousel-info-capacity {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: rgba(27, 79, 156, 0.1);
+  color: var(--brand-bpo-navy);
+  padding: 3px 7px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(27, 79, 156, 0.2);
+  white-space: nowrap;
+}
+
+.carousel-info-desc {
+  font-size: 0.78rem;
+  color: var(--color-gray-70);
+  line-height: 1.45;
+}
+
+.carousel-dots-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-gray-05);
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-gray-20);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  width: 20px;
+  border-radius: 4px;
+  background: var(--brand-bpo-navy);
 }
 
 /* Feature Tiles Grid */

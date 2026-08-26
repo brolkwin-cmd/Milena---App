@@ -85,27 +85,134 @@
     </div>
 
     <!-- ==========================================================================
-         INTERACTIVE SITE SWITCHER WIDGET
+         INTERACTIVE INFRASTRUCTURE PHOTO CAROUSEL & SEDES OPERATIVAS
          ========================================================================== -->
     <div class="section-title-wrap reveal-on-scroll" data-es="Infraestructura y Sedes Operativas" data-en="Operational Sites &amp; Infrastructure">
       Infraestructura y Sedes Operativas
     </div>
 
-    <div class="site-switcher-box reveal-on-scroll" id="bpo-site-switcher">
-      <div class="site-toggle-bar">
-        <button class="site-toggle-btn active" data-site="toberin">🏢 Sede Toberín (464 Pos)</button>
-        <button class="site-toggle-btn" data-site="zf">🛡️ Sede Zona Franca (600 Pos)</button>
+    <div class="site-switcher-box reveal-on-scroll" id="bpo-photo-carousel">
+      <!-- Carousel Visual Viewport -->
+      <div class="carousel-viewport">
+        <div class="carousel-top-tags">
+          <span class="carousel-location-badge" id="carousel-badge-loc">🏢 Sede Toberín</span>
+          <span class="carousel-counter-badge" id="carousel-counter">1 / 6</span>
+        </div>
+
+        <button class="carousel-nav-btn btn-prev" id="carousel-btn-prev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="carousel-track" id="carousel-track">
+          <!-- Slide 1: Piso de Operaciones CX Toberín -->
+          <div class="carousel-slide" 
+               data-loc-es="🏢 Sede Toberín" 
+               data-loc-en="🏢 Toberín Facility"
+               data-cap-es="464 Posiciones Operativas"
+               data-cap-en="464 Operational Seats"
+               data-title-es="Piso de Operaciones Contact Center &amp; CX" 
+               data-title-en="CX &amp; Contact Center Operations Floor"
+               data-desc-es="Infraestructura equipada con tecnología redundante, estaciones ergonómicas y supervisión en tiempo real." 
+               data-desc-en="High-density operations floor equipped with redundant technology, ergonomic stations, and live monitoring.">
+            <img src="../assets/img/Toerin1.jpg" alt="Piso de Operaciones Contact Center" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+
+          <!-- Slide 2: Salas de Juntas & Comités Directivos -->
+          <div class="carousel-slide" 
+               data-loc-es="🤝 Salas de Juntas" 
+               data-loc-en="🤝 Executive Boardrooms"
+               data-cap-es="Planeación Estratégica"
+               data-cap-en="Strategic Planning"
+               data-title-es="Salas de Reuniones &amp; Comités de Negocios" 
+               data-title-en="Executive Meeting Rooms &amp; Client Boardrooms"
+               data-desc-es="Espacios ejecutivos para comités de cuenta, planeación estratégica, alineación de SLAs y auditorías." 
+               data-desc-en="Executive boardrooms for account reviews, strategic planning, SLA tracking, and international audits.">
+            <img src="../assets/img/14.jpg" alt="Salas de Reuniones y Comités" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+
+          <!-- Slide 3: Sede Zona Franca (600 Posiciones) -->
+          <div class="carousel-slide" 
+               data-loc-es="🛡️ Sede Zona Franca" 
+               data-loc-en="🛡️ Free Trade Zone"
+               data-cap-es="600 Posiciones Operativas"
+               data-cap-en="600 Operational Seats"
+               data-title-es="Macro-Piso de Operaciones Zona Franca" 
+               data-title-en="Free Trade Zone Macro-Floor Operation"
+               data-desc-es="Sede bajo régimen franco con beneficios tributarios y aduaneros, alta seguridad física y lógica ISO 27001." 
+               data-desc-en="Customs and tax-incentivized facility offering robust physical and logical security certified under ISO 27001.">
+            <img src="../assets/img/ZF 1.png" alt="Sede Zona Franca" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+
+          <!-- Slide 4: Estaciones de Agente Doble Pantalla -->
+          <div class="carousel-slide" 
+               data-loc-es="🎧 Operación Especializada" 
+               data-loc-en="🎧 Specialized Operation"
+               data-cap-es="Doble Pantalla &amp; CRM"
+               data-cap-en="Dual Monitors &amp; CRM"
+               data-title-es="Puestos Especializados de Atención BPO" 
+               data-title-en="Specialized BPO Workstations &amp; Tools"
+               data-desc-es="Agentes técnicos y bilingües con doble monitor integrados a CRM, telefonía IP y Be AgentIA." 
+               data-desc-en="Bilingual and specialized agents with dual-screen setups integrated into CRM, VoIP, and Be AgentIA.">
+            <img src="../assets/img/6.png" alt="Estaciones de Agentes BPO" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+
+          <!-- Slide 5: Zonas de Bienestar y Terrazas de Equipo -->
+          <div class="carousel-slide" 
+               data-loc-es="☕ Bienestar &amp; Cultura" 
+               data-loc-en="☕ Wellness &amp; Culture"
+               data-cap-es="2.34% Rotación"
+               data-cap-en="2.34% Turnover"
+               data-title-es="Terrazas, Zonas de Café y Bienestar" 
+               data-title-en="Rooftop Terraces &amp; Wellness Lounges"
+               data-desc-es="Espacios de descanso e integración que motivan al equipo y respaldan la menor rotación del mercado." 
+               data-desc-en="Comfort and recreational spaces driving team happiness and the industry's lowest turnover rate.">
+            <img src="../assets/img/Toberin4.jpg" alt="Zonas de Bienestar y Terrazas" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+
+          <!-- Slide 6: Centro de Monitoreo SOC & Seguridad -->
+          <div class="carousel-slide" 
+               data-loc-es="🔒 Monitoreo &amp; SOC" 
+               data-loc-en="🔒 SOC &amp; Security"
+               data-cap-es="Seguridad 24/7"
+               data-cap-en="24/7 Security"
+               data-title-es="Centro de Control, Red y Seguridad SOC" 
+               data-title-en="SOC Operations &amp; Security Control Center"
+               data-desc-es="Vigilancia perimetral, monitoreo de redes y control estricto de accesos físicos y de datos 24/7." 
+               data-desc-en="Continuous perimeter CCTV surveillance, network health tracking, and 24/7 ISO 27001 data governance.">
+            <img src="../assets/img/ZF 2.jpg" alt="Centro de Control SOC" class="carousel-slide-img">
+            <div class="carousel-slide-overlay"></div>
+          </div>
+        </div>
+
+        <button class="carousel-nav-btn btn-next" id="carousel-btn-next" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
 
-      <div class="site-display-panel">
-        <img src="../assets/img/Toberin2.png" alt="Sede Operativa" class="site-display-img">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
-          <h3 class="site-display-title" style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--color-black);">Sede Toberín (Norte de Bogotá)</h3>
-          <span class="showcase-tag site-display-seats" style="background: rgba(27, 79, 156, 0.12); color: var(--brand-bpo-navy); border-color: rgba(27, 79, 156, 0.25);">464 Posiciones Operativas</span>
+      <!-- Carousel Dynamic Caption Box -->
+      <div class="carousel-info-box">
+        <div class="carousel-info-header">
+          <h3 class="carousel-info-title" id="carousel-info-title">Piso de Operaciones Contact Center &amp; CX</h3>
+          <span class="carousel-info-capacity" id="carousel-info-cap">464 Posiciones Operativas</span>
         </div>
-        <p class="site-display-desc" style="font-size: 0.8rem; color: var(--color-gray-70); line-height: 1.45;">
-          Ubicación estratégica con acceso privilegiado al mejor talento profesional, técnico y bilingüe de Bogotá. Diseñada para operaciones de alta exigencia CX y ventas.
+        <p class="carousel-info-desc" id="carousel-info-desc">
+          Infraestructura equipada con tecnología redundante, estaciones ergonómicas y supervisión en tiempo real.
         </p>
+      </div>
+
+      <!-- Carousel Dots Navigation -->
+      <div class="carousel-dots-bar" id="carousel-dots-bar">
+        <button class="carousel-dot active" data-index="0" aria-label="Foto 1"></button>
+        <button class="carousel-dot" data-index="1" aria-label="Foto 2"></button>
+        <button class="carousel-dot" data-index="2" aria-label="Foto 3"></button>
+        <button class="carousel-dot" data-index="3" aria-label="Foto 4"></button>
+        <button class="carousel-dot" data-index="4" aria-label="Foto 5"></button>
+        <button class="carousel-dot" data-index="5" aria-label="Foto 6"></button>
       </div>
     </div>
 
