@@ -45,6 +45,7 @@
     initCopyActions();
     initShareAction();
     initVCardAction();
+    initLeadModal();
   });
 
   /* ==========================================================================
@@ -610,6 +611,104 @@
         showToast(currentLang === 'en' ? 'Contact saved (vCard)' : 'Contacto descargado (vCard)');
       });
     });
+  }
+
+  /* ==========================================================================
+     LEAD CAPTURE MODAL: "QUIERO CONOCER MÁS"
+     ========================================================================== */
+  function initLeadModal() {
+    const overlay = document.getElementById('lead-modal-overlay');
+    if (!overlay) return;
+
+    const openBtns = document.querySelectorAll('[data-open-lead-modal]');
+    const closeBtn = document.getElementById('lead-modal-close');
+    const form = document.getElementById('lead-inquiry-form');
+
+    function openModal() {
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const firstInput = overlay.querySelector('input');
+      if (firstInput) setTimeout(() => firstInput.focus(), 200);
+    }
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal();
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+    }
+
+    // Close when clicking background overlay
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Handle Form Submission
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = (document.getElementById('lead-name')?.value || '').trim();
+        const company = (document.getElementById('lead-company')?.value || '').trim();
+        const phone = (document.getElementById('lead-phone')?.value || '').trim();
+        const email = (document.getElementById('lead-email')?.value || '').trim();
+        const interest = document.getElementById('lead-interest')?.value || 'Portafolio Integral';
+        const message = (document.getElementById('lead-message')?.value || '').trim();
+
+        if (!name || !phone) {
+          showToast(currentLang === 'en' ? 'Please enter name and phone.' : 'Por favor ingresa nombre y teléfono.');
+          return;
+        }
+
+        // Build WhatsApp text message
+        const waLines = [
+          `*SOLICITUD COMERCIAL — BPM CONSULTING*`,
+          `👤 *Nombre:* ${name}`,
+          company ? `🏢 *Empresa / Cargo:* ${company}` : '',
+          `📱 *WhatsApp:* ${phone}`,
+          email ? `✉️ *Correo:* ${email}` : '',
+          `🎯 *Interés:* ${interest}`,
+          message ? `📝 *Requerimiento:* ${message}` : ''
+        ].filter(Boolean).join('\n');
+
+        const encodedMsg = encodeURIComponent(waLines);
+        const waUrl = `https://wa.me/573215734798?text=${encodedMsg}`;
+
+        // Open WhatsApp
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+        // Notification feedback
+        showToast(currentLang === 'en' ? 'Inquiry sent successfully!' : '¡Solicitud enviada con éxito!');
+
+        // Reset and close
+        form.reset();
+        closeModal();
+      });
+    }
   }
 
   /* ==========================================================================
