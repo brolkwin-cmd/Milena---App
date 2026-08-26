@@ -196,14 +196,16 @@
 
     function createParticles() {
       particles = [];
-      const count = Math.min(Math.floor((width * height) / 14000), 65);
+      // Lightweight calculation for ultra-smooth 60fps on mobile devices
+      const isMobile = width < 768;
+      const count = isMobile ? 24 : Math.min(Math.floor((width * height) / 16000), 55);
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.6,
-          vy: (Math.random() - 0.5) * 0.6,
-          radius: Math.random() * 2 + 1.2
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 1.8 + 1.0
         });
       }
     }

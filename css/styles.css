@@ -176,7 +176,7 @@ body {
   align-items: center;
 }
 
-/* Top Header Strip */
+/* Top Header Bar for Hub */
 .top-header-strip {
   width: 100%;
   display: flex;
@@ -184,6 +184,44 @@ body {
   align-items: center;
   margin-bottom: 16px;
   padding: 0 2px;
+}
+
+/* Top Header Bar for Subpages (Clean Back Nav + Logo + Lang) */
+.subpage-top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.back-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-gray-10);
+  border-radius: var(--radius-xs);
+  color: var(--color-black);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.back-nav-pill:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue-dark);
+  background: #FFFFFF;
+}
+
+.back-nav-pill:active {
+  transform: scale(0.96);
 }
 
 .top-brand-logo {
@@ -194,6 +232,7 @@ body {
 .lang-toggle-group {
   display: flex;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .lang-pill-btn {
@@ -472,7 +511,6 @@ body {
   transform: scale(0.98);
 }
 
-/* Standardized Optical Brand Container */
 .tile-top-row {
   display: flex;
   align-items: center;
@@ -497,7 +535,7 @@ body {
   display: block;
 }
 
-/* Optical Calibration for ELP and FEEL so all logos have balanced weight */
+/* Optical Calibration */
 .tile-elp .tile-brand-frame {
   max-height: 22px;
   max-width: 75px;
