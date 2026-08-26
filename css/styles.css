@@ -734,33 +734,67 @@ body {
   display: block;
 }
 
-/* Optical Calibration */
-.tile-elp .tile-brand-frame {
-  max-height: 22px;
-  max-width: 75px;
+.tile-bpo {
+  --prod-accent-color: #0066FF;
+  --prod-tag-bg: rgba(0, 102, 255, 0.08);
+  --prod-tag-border: rgba(0, 102, 255, 0.22);
+  --prod-icon-bg: rgba(0, 102, 255, 0.08);
+  --prod-icon-color: #0066FF;
 }
 
-.tile-agentia .tile-brand-frame {
-  max-height: 25px;
-  max-width: 95px;
+.tile-agentia {
+  --prod-accent-color: #7C3AED;
+  --prod-tag-bg: rgba(124, 58, 237, 0.08);
+  --prod-tag-border: rgba(124, 58, 237, 0.22);
+  --prod-icon-bg: rgba(124, 58, 237, 0.08);
+  --prod-icon-color: #7C3AED;
 }
 
-.tile-feel .tile-brand-frame {
-  max-height: 26px;
-  max-width: 105px;
+.tile-feel {
+  --prod-accent-color: #0090CC;
+  --prod-tag-bg: rgba(0, 191, 252, 0.08);
+  --prod-tag-border: rgba(0, 191, 252, 0.22);
+  --prod-icon-bg: rgba(0, 191, 252, 0.1);
+  --prod-icon-color: #0090CC;
 }
 
-.tile-bpo .tile-brand-frame {
-  max-height: 24px;
-  max-width: 105px;
+.tile-elp {
+  --prod-accent-color: #E11D48;
+  --prod-tag-bg: rgba(225, 29, 72, 0.08);
+  --prod-tag-border: rgba(225, 29, 72, 0.22);
+  --prod-icon-bg: rgba(225, 29, 72, 0.08);
+  --prod-icon-color: #E11D48;
+}
+
+.tile-service-icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--prod-icon-bg, rgba(0, 191, 252, 0.1));
+  color: var(--prod-icon-color, var(--color-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--prod-tag-border, rgba(0, 191, 252, 0.2));
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.product-executive-tile:hover .service-icon-circle {
+  transform: scale(1.06);
 }
 
 .tile-index-badge {
   font-family: var(--font-display);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
   padding: 3px 8px;
   border-radius: var(--radius-xs);
   background: var(--prod-tag-bg, rgba(0, 191, 252, 0.08));
@@ -775,17 +809,25 @@ body {
 
 .tile-title-main {
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--color-black);
   line-height: 1.25;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .tile-value-pitch {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--color-gray-70);
-  line-height: 1.42;
+  line-height: 1.45;
+}
+
+.exec-sub-tagline {
+  font-size: 0.8rem;
+  color: var(--color-blue-dark);
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 14px;
 }
 
 .tile-bottom-action {
