@@ -2684,3 +2684,95 @@ body[data-product="elp"] .btn-dual-inquiry {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   CRM CONNECTORS & ECOSYSTEM INTEGRATION STRIP
+   ========================================================================== */
+.subpage-crm-integration-strip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(79, 70, 229, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.06);
+  text-align: center;
+}
+
+.subpage-crm-strip-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #4F46E5;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.subpage-crm-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.crm-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  color: #4338CA;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   INDUSTRY AWARDS & INTERNATIONAL PRESENCE STRIPS
+   ========================================================================== */
+.assurance-awards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0, 102, 255, 0.15);
+}
+
+.award-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  color: #92400E;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.international-presence-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-xs);
+  padding: 8px 12px;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: #1E293B;
+  font-weight: 600;
+  text-align: center;
+}
+
