@@ -37,8 +37,10 @@
          ========================================================================== -->
     <section class="subpage-hero-banner reveal-on-scroll">
       <div class="subpage-hero-left">
-        <span class="subpage-badge-pill" style="background:#0090CC;">03</span>
-        <h1 class="subpage-prod-title" style="color:#0090CC;">FEEL</h1>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+          <span class="subpage-badge-pill" style="background:#0090CC;">03</span>
+          <img src="../assets/logos/feel-logo.png" alt="FEEL Facturación Electrónica" style="height:42px; width:auto; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(0,144,204,0.15));" onerror="this.src='../assets/logos/feel-logo.svg'">
+        </div>
         <h2 class="subpage-prod-subtitle" data-es="Facturación electrónica simple y automatizada" data-en="Simple &amp; Automated Electronic Invoicing">Facturación electrónica simple y automatizada</h2>
         <p class="subpage-prod-pitch" data-es="Plataforma en la nube 100% avalada por la DIAN. Emisión masiva, validación en menos de 1 segundo e integración con tu ERP." data-en="100% DIAN-compliant cloud platform. Bulk issuance, real-time validation under 1 second, and native ERP sync.">
           Plataforma en la nube 100% avalada por la DIAN. Emisión masiva, validación en menos de 1 segundo e integración con tu ERP.
@@ -47,56 +49,86 @@
 
       <div class="subpage-hero-right">
         <div class="subpage-mascot-frame">
-          <svg viewBox="0 0 160 160" width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="80" cy="80" r="70" fill="#F0F9FF"/>
-            
-            <!-- Orbit Ring -->
-            <ellipse cx="80" cy="80" rx="65" ry="24" stroke="#BAE6FD" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <svg viewBox="0 0 170 170" width="170" height="170" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00BFFC"/>
+                <stop offset="100%" stop-color="#0090CC"/>
+              </linearGradient>
+              <linearGradient id="docGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#F8FAFC"/>
+              </linearGradient>
+              <filter id="shadowFeel" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0090CC" flood-opacity="0.2"/>
+              </filter>
+            </defs>
 
-            <!-- Floating DIAN Badge -->
-            <g transform="translate(14, 20)">
-              <rect width="48" height="20" rx="10" fill="#0090CC" filter="drop-shadow(0 2px 4px rgba(0, 144, 204, 0.3))"/>
-              <text x="24" y="13" fill="#FFF" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">100% DIAN</text>
+            <!-- Ambient Glow Background -->
+            <circle cx="85" cy="85" r="74" fill="#F0F9FF"/>
+
+            <!-- Cloud Silhouette in the Background (Top-Right) -->
+            <g opacity="0.95" filter="url(#shadowFeel)">
+              <path d="M82 52 C82 40 92 32 104 32 C114 32 123 38 126 48 C129 46 132 45 136 45 C145 45 152 52 152 61 C152 70 145 77 136 77 L86 77 C77 77 70 70 70 61 C70 53 76 46 82 52 Z" fill="url(#cloudGrad)"/>
+              <!-- Cloud Sync Arrows -->
+              <path d="M106 52 L116 42 L126 52" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="116" y1="44" x2="116" y2="64" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
             </g>
 
-            <!-- Floating Speed Badge -->
-            <g transform="translate(100, 18)">
-              <rect width="44" height="20" rx="10" fill="#0284C7" filter="drop-shadow(0 2px 4px rgba(2, 132, 199, 0.3))"/>
-              <text x="22" y="13" fill="#FFF" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">&lt; 1s XML</text>
-            </g>
+            <!-- Real-time Online Sync Pulse Flow -->
+            <path d="M116 77 C116 92 102 96 82 96" stroke="#00BFFC" stroke-width="2" stroke-dasharray="3 3"/>
+            <circle cx="98" cy="94" r="3.5" fill="#00BFFC"/>
 
-            <!-- Floating Vault Security Badge -->
-            <g transform="translate(104, 122)">
-              <rect width="42" height="20" rx="10" fill="#10B981" filter="drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3))"/>
-              <text x="21" y="13" fill="#FFF" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">RADIAN</text>
-            </g>
-
-            <!-- Electronic Invoice Document Illustration -->
-            <g transform="translate(45, 36)">
-              <!-- Document Sheet -->
-              <rect x="0" y="0" width="70" height="90" rx="8" fill="#FFFFFF" stroke="#0090CC" stroke-width="2.5" filter="drop-shadow(0 6px 14px rgba(0, 144, 204, 0.12))"/>
+            <!-- Floating Digital Online Invoice Document -->
+            <g transform="translate(18, 36)" filter="url(#shadowFeel)">
+              <!-- Document Base Sheet -->
+              <rect x="0" y="0" width="76" height="104" rx="10" fill="url(#docGrad)" stroke="#0090CC" stroke-width="2"/>
               
-              <!-- Top Color Header -->
-              <rect x="0" y="0" width="70" height="18" rx="8" fill="#0090CC"/>
-              <rect x="0" y="10" width="70" height="8" fill="#0090CC"/>
-              <circle cx="10" cy="9" r="3" fill="#FFFFFF"/>
-              <line x1="20" y1="9" x2="60" y2="9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
-
-              <!-- Invoice Lines -->
-              <line x1="10" y1="28" x2="45" y2="28" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="10" y1="38" x2="60" y2="38" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
-              <line x1="10" y1="46" x2="52" y2="46" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+              <!-- Top Invoice Header Ribbon -->
+              <path d="M0 10 C0 4.477 4.477 0 10 0 L66 0 C71.523 0 76 4.477 76 10 L76 22 L0 22 Z" fill="#0090CC"/>
               
-              <!-- QR Code Box -->
-              <rect x="10" y="56" width="22" height="22" rx="4" fill="#F0F9FF" stroke="#0090CC" stroke-width="1.5"/>
-              <rect x="14" y="60" width="5" height="5" fill="#0090CC"/>
-              <rect x="23" y="60" width="5" height="5" fill="#0090CC"/>
-              <rect x="14" y="69" width="5" height="5" fill="#0090CC"/>
-              <rect x="23" y="69" width="5" height="5" fill="#0090CC"/>
+              <!-- Header Content: Dot + "FEEL · ONLINE" -->
+              <circle cx="10" cy="11" r="3" fill="#FFFFFF"/>
+              <text x="18" y="14.5" fill="#FFFFFF" font-family="'Unbounded', sans-serif" font-size="7" font-weight="900" letter-spacing="0.5">FEEL</text>
+              <rect x="46" y="6" width="22" height="10" rx="5" fill="rgba(255,255,255,0.25)"/>
+              <text x="57" y="13.5" fill="#FFFFFF" font-family="sans-serif" font-size="5.5" font-weight="bold" text-anchor="middle">ONLINE</text>
 
-              <!-- Check Badge -->
-              <circle cx="52" cy="67" r="10" fill="#10B981"/>
-              <polyline points="48 67 51 70 57 64" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Itemized Lines -->
+              <line x1="10" y1="32" x2="42" y2="32" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="10" y1="41" x2="66" y2="41" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+              <line x1="10" y1="49" x2="56" y2="49" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+              <line x1="10" y1="57" x2="62" y2="57" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- Subtotal & Total Line -->
+              <line x1="10" y1="67" x2="66" y2="67" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <text x="10" y="77" fill="#64748B" font-family="sans-serif" font-size="6" font-weight="bold">TOTAL</text>
+              <text x="66" y="77" fill="#0090CC" font-family="sans-serif" font-size="6.5" font-weight="900" text-anchor="end">$$$ XML</text>
+
+              <!-- Bottom QR / Security Section -->
+              <rect x="8" y="82" width="16" height="16" rx="3" fill="#F0F9FF" stroke="#00BFFC" stroke-width="1"/>
+              <rect x="11" y="85" width="3" height="3" fill="#0090CC"/>
+              <rect x="18" y="85" width="3" height="3" fill="#0090CC"/>
+              <rect x="11" y="92" width="3" height="3" fill="#0090CC"/>
+              <rect x="18" y="92" width="3" height="3" fill="#0090CC"/>
+
+              <!-- DIAN Approved Stamp Badge -->
+              <g transform="translate(30, 82)">
+                <rect width="38" height="16" rx="8" fill="#10B981"/>
+                <polyline points="7 8 10 11 16 5" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="25" y="11" fill="#FFFFFF" font-family="sans-serif" font-size="5.5" font-weight="900" text-anchor="middle">DIAN OK</text>
+              </g>
+            </g>
+
+            <!-- Top Floating Badge: DIAN 100% -->
+            <g transform="translate(6, 14)" filter="url(#shadowFeel)">
+              <rect width="54" height="18" rx="9" fill="#0090CC"/>
+              <text x="27" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="7" font-weight="bold" text-anchor="middle">100% DIAN</text>
+            </g>
+
+            <!-- Right Floating Badge: &lt; 1s CLOUD -->
+            <g transform="translate(106, 126)" filter="url(#shadowFeel)">
+              <rect width="52" height="18" rx="9" fill="#0284C7"/>
+              <text x="26" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="7" font-weight="bold" text-anchor="middle">&lt; 1s CLOUD</text>
             </g>
           </svg>
         </div>
