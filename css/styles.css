@@ -229,9 +229,21 @@ body {
   transform: scale(0.96);
 }
 
+.top-header-strip {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
 .top-brand-logo {
-  height: 24px;
+  height: 34px;
+  max-width: 150px;
+  width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .lang-toggle-group {
@@ -244,10 +256,10 @@ body {
   background: #FFFFFF;
   border: 1px solid var(--color-gray-10);
   color: var(--color-gray-70);
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: var(--radius-xs);
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1630,25 +1642,145 @@ body {
 
 /* ==========================================================================
    CLIENT TRUST LOGOS (CLEAN 4-COLUMN STRIP)
+/* ==========================================================================
+   HIGH-CONVERSION DUAL ACTION CARDS (SOLICITAR INFORMACIÓN & HABLAR POR WHATSAPP)
+   ========================================================================== */
+.solution-cta-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  margin: 20px 0 22px;
+}
+
+@media (max-width: 480px) {
+  .solution-cta-dual-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.btn-dual-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: var(--shadow-card);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.btn-dual-card:active {
+  transform: scale(0.98);
+}
+
+/* Left Primary: Solicitar Información */
+.btn-dual-inquiry {
+  background: var(--prod-accent, #7C3AED);
+  color: #FFFFFF;
+  border: none;
+}
+
+.btn-dual-inquiry:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+}
+
+body[data-product="bpo"] .btn-dual-inquiry {
+  background: #0066FF;
+}
+body[data-product="feel"] .btn-dual-inquiry {
+  background: #0090CC;
+}
+body[data-product="elp"] .btn-dual-inquiry {
+  background: #E11D48;
+}
+
+.btn-dual-inquiry .btn-dual-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFFFFF;
+}
+
+.btn-dual-inquiry .btn-dual-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.btn-dual-inquiry .btn-dual-sub {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+/* Right Secondary: Hablar por WhatsApp */
+.btn-dual-wa {
+  background: #FFFFFF;
+  color: var(--color-black);
+  border: 1.5px solid rgba(37, 211, 102, 0.45);
+}
+
+.btn-dual-wa:hover {
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.22);
+}
+
+.btn-dual-wa .btn-dual-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(37, 211, 102, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #25D366;
+}
+
+.btn-dual-wa .btn-dual-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.2;
+}
+
+.btn-dual-wa .btn-dual-sub {
+  font-size: 0.72rem;
+  color: var(--color-gray-70);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   CLIENT TRUST SECTION & EXPANDABLE LOGO ACCORDION
    ========================================================================== */
 .client-trust-section {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid var(--color-gray-10);
   border-radius: var(--radius-md);
-  padding: 16px 14px;
+  padding: 18px 14px 16px;
   margin-bottom: 20px;
-  box-shadow: var(--shadow-subtle);
-  text-align: center;
-}
-
-.client-trust-section {
-  width: 100%;
-  background: #FFFFFF;
-  border: 1px solid var(--color-gray-10);
-  border-radius: var(--radius-md);
-  padding: 16px 14px;
-  margin-bottom: 18px;
   box-shadow: var(--shadow-subtle);
   text-align: center;
 }
@@ -1667,13 +1799,19 @@ body {
 .client-logo-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .client-logo-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .client-logo-cell,
 .client-logo-card {
-  height: 44px;
+  height: 46px;
   background: var(--color-gray-05);
   border: 1px solid var(--color-gray-10);
   border-radius: var(--radius-xs);
@@ -1693,7 +1831,7 @@ body {
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.75;
+  opacity: 0.78;
   transition: all 0.2s ease;
   display: block;
 }
@@ -1702,6 +1840,66 @@ body {
 .client-logo-card:hover img {
   filter: grayscale(0%);
   opacity: 1;
+}
+
+.btn-expand-clients-wrap {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-expand-clients {
+  background: var(--color-gray-05);
+  border: 1px solid var(--color-gray-15);
+  color: var(--color-gray-70);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-expand-clients:hover {
+  background: var(--color-black);
+  color: #FFFFFF;
+  border-color: var(--color-black);
+}
+
+.btn-expand-clients svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-expand-clients.expanded svg {
+  transform: rotate(180deg);
+}
+
+.clients-extra-grid {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, margin-top 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .clients-extra-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.clients-extra-grid.expanded {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--color-gray-10);
 }
 
 /* ==========================================================================

@@ -46,6 +46,7 @@
     initShareAction();
     initVCardAction();
     initLeadModal();
+    initClientsToggle();
   });
 
   /* ==========================================================================
@@ -624,7 +625,20 @@
     const closeBtn = document.getElementById('lead-modal-close');
     const form = document.getElementById('lead-inquiry-form');
 
-    function openModal() {
+    function openModal(serviceName) {
+      if (serviceName) {
+        const selectEl = document.getElementById('lead-interest');
+        if (selectEl) {
+          // Find matching option
+          for (let i = 0; i < selectEl.options.length; i++) {
+            if (selectEl.options[i].value.toLowerCase().includes(serviceName.toLowerCase()) || 
+                serviceName.toLowerCase().includes(selectEl.options[i].value.toLowerCase())) {
+              selectEl.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
       overlay.classList.add('active');
       overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -642,7 +656,8 @@
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        openModal();
+        const service = btn.getAttribute('data-service') || '';
+        openModal(service);
       });
     });
 
@@ -674,25 +689,23 @@
 
         const name = (document.getElementById('lead-name')?.value || '').trim();
         const company = (document.getElementById('lead-company')?.value || '').trim();
-        const phone = (document.getElementById('lead-phone')?.value || '').trim();
         const email = (document.getElementById('lead-email')?.value || '').trim();
-        const interest = document.getElementById('lead-interest')?.value || 'Portafolio Integral';
-        const message = (document.getElementById('lead-message')?.value || '').trim();
+        const phone = (document.getElementById('lead-phone')?.value || '').trim();
+        const interest = document.getElementById('lead-interest')?.value || 'Portafolio General';
 
         if (!name || !phone) {
           showToast(currentLang === 'en' ? 'Please enter name and phone.' : 'Por favor ingresa nombre y teléfono.');
           return;
         }
 
-        // Build WhatsApp text message
+        // Build structured WhatsApp text message
         const waLines = [
-          `*SOLICITUD COMERCIAL — BPM CONSULTING*`,
+          `*SOLICITUD DE INFORMACIÓN — ANDICOM / BPM CONSULTING*`,
           `👤 *Nombre:* ${name}`,
-          company ? `🏢 *Empresa / Cargo:* ${company}` : '',
-          `📱 *WhatsApp:* ${phone}`,
+          company ? `🏢 *Empresa:* ${company}` : '',
           email ? `✉️ *Correo:* ${email}` : '',
-          `🎯 *Interés:* ${interest}`,
-          message ? `📝 *Requerimiento:* ${message}` : ''
+          `📱 *Teléfono:* ${phone}`,
+          `🎯 *Servicio de interés:* ${interest}`
         ].filter(Boolean).join('\n');
 
         const encodedMsg = encodeURIComponent(waLines);
@@ -709,6 +722,37 @@
         closeModal();
       });
     }
+  }
+
+  /* ==========================================================================
+     CLIENTS ACCORDION (Y MUCHAS MÁS ▾)
+     ========================================================================== */
+  function initClientsToggle() {
+    const toggleBtns = document.querySelectorAll('.btn-expand-clients, [data-toggle-clients]');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetGrid = document.querySelector('.clients-extra-grid');
+        if (!targetGrid) return;
+
+        const isExpanded = targetGrid.classList.contains('expanded');
+        if (isExpanded) {
+          targetGrid.classList.remove('expanded');
+          btn.classList.remove('expanded');
+          const labelSpan = btn.querySelector('span');
+          if (labelSpan) {
+            labelSpan.textContent = currentLang === 'en' ? 'And many more' : 'Y muchas más';
+          }
+        } else {
+          targetGrid.classList.add('expanded');
+          btn.classList.add('expanded');
+          const labelSpan = btn.querySelector('span');
+          if (labelSpan) {
+            labelSpan.textContent = currentLang === 'en' ? 'Show fewer brands' : 'Ver menos marcas';
+          }
+        }
+      });
+    });
   }
 
   /* ==========================================================================
