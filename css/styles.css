@@ -649,17 +649,24 @@ body {
   border: 1px solid #E2E8F0;
   border-radius: 18px;
   padding: 16px 18px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 22px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
+.assurance-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
 @media (max-width: 480px) {
-  .assurance-cert-card {
-    grid-template-columns: 1fr;
+  .assurance-main-row {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
   }
 }
@@ -668,6 +675,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1;
 }
 
 .assurance-shield-icon {
@@ -699,7 +707,8 @@ body {
 .cert-badges-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .cert-stamp-badge {
