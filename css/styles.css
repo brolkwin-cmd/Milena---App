@@ -2023,26 +2023,30 @@ body {
 .subpage-client-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px 18px;
   width: 100%;
   flex-wrap: wrap;
 }
 
 .subpage-client-logo-item {
-  height: 48px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .subpage-client-logo-item img {
-  max-height: 40px;
-  max-width: 105px;
+  max-height: 28px;
+  max-width: 68px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   filter: grayscale(0%);
-  opacity: 0.95;
+  opacity: 0.92;
   transition: all 0.2s ease;
+  display: block;
 }
 
 /* ==========================================================================
