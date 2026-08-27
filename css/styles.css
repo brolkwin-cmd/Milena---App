@@ -230,11 +230,12 @@ body {
 }
 
 .top-brand-logo {
-  height: 38px;
-  max-width: 160px;
+  height: 52px;
+  max-width: 240px;
   width: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04));
 }
 
 .top-header-right {
@@ -2029,18 +2030,19 @@ body {
 }
 
 .subpage-client-logo-item {
-  height: 36px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .subpage-client-logo-item img {
-  max-height: 28px;
-  max-width: 75px;
+  max-height: 40px;
+  max-width: 105px;
   object-fit: contain;
-  filter: grayscale(20%);
-  opacity: 0.85;
+  filter: grayscale(0%);
+  opacity: 0.95;
+  transition: all 0.2s ease;
 }
 
 /* ==========================================================================
@@ -2213,14 +2215,14 @@ body[data-product="elp"] .btn-dual-inquiry {
 
 .client-logo-cell,
 .client-logo-card {
-  height: 72px;
+  height: 82px;
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 4px 10px;
   overflow: hidden;
   box-sizing: border-box;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
@@ -2236,22 +2238,20 @@ body[data-product="elp"] .btn-dual-inquiry {
 
 .client-logo-cell img,
 .client-logo-card img {
-  max-width: 92%;
-  max-height: 48px;
+  max-width: 95%;
+  max-height: 60px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(15%);
-  opacity: 0.95;
+  filter: grayscale(0%);
+  opacity: 1;
   transition: all 0.22s ease;
   display: block;
 }
 
 .client-logo-cell:hover img,
 .client-logo-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .btn-expand-clients-wrap {
