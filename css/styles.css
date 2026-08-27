@@ -2179,6 +2179,156 @@ body[data-product="elp"] .btn-dual-inquiry {
   opacity: 1;
 }
 
+/* ==========================================================================
+   LEAD CAPTURE MODAL / BOTTOM-SHEET: "SOLICITAR INFORMACIÓN"
+   ========================================================================== */
+.lead-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.lead-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lead-modal-sheet {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 24px 22px 30px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.lead-modal-overlay.active .lead-modal-sheet {
+  transform: translateY(0);
+}
+
+.lead-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-gray-10);
+}
+
+.lead-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.lead-modal-close-btn {
+  background: var(--color-gray-05);
+  border: 1px solid var(--color-gray-10);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-70);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lead-modal-close-btn:hover {
+  background: var(--color-black);
+  color: #FFFFFF;
+}
+
+.lead-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.lead-input-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.lead-form-input,
+.lead-form-select,
+.lead-form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-gray-20);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-black);
+  background: #FAFAFA;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.lead-form-input:focus,
+.lead-form-select:focus,
+.lead-form-textarea:focus {
+  border-color: var(--color-blue-dark);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 191, 252, 0.15);
+}
+
+.lead-form-submit-btn {
+  width: 100%;
+  background: #25D366;
+  color: #FFFFFF;
+  border: none;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.lead-form-submit-btn:hover {
+  background: #1EBE5D;
+}
+
+.lead-form-submit-btn:active {
+  transform: scale(0.98);
+}
+
 /* Sticky Float Bar */
 .sticky-float-bar {
   position: fixed;
