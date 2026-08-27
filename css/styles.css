@@ -1797,6 +1797,244 @@ body {
 /* ==========================================================================
    CLIENT TRUST LOGOS (CLEAN 4-COLUMN STRIP)
 /* ==========================================================================
+/* ==========================================================================
+   EXECUTIVE SUBPAGE LAYOUT (MOCKUP REPLICA)
+   ========================================================================== */
+
+/* Top Back Navigation */
+.subpage-back-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+
+.subpage-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0F172A;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.subpage-back-link:hover {
+  transform: translateX(-3px);
+  color: var(--prod-accent, #4F46E5);
+}
+
+/* Hero Section Split Layout */
+.subpage-hero-banner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 480px) {
+  .subpage-hero-banner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 12px;
+  }
+}
+
+.subpage-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.subpage-badge-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.subpage-prod-title {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 480px) {
+  .subpage-prod-title {
+    font-size: 1.95rem;
+  }
+}
+
+.subpage-prod-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subpage-prod-pitch {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.48;
+}
+
+.subpage-hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.subpage-mascot-frame {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subpage-mascot-frame svg,
+.subpage-mascot-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 185px;
+  object-fit: contain;
+}
+
+/* Feature Card: "¿Qué puedes hacer?" */
+.subpage-feature-card {
+  width: 100%;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.subpage-card-heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.subpage-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 14px;
+}
+
+@media (max-width: 440px) {
+  .subpage-features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 10px;
+  }
+}
+
+.subpage-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.subpage-feat-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.subpage-feat-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.38;
+}
+
+/* Checklist Card: "¿Por qué BPM?" */
+.subpage-checklist-card {
+  width: 100%;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 22px 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.subpage-checks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subpage-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subpage-check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subpage-check-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.35;
+}
+
+/* Single Strip Client Logos */
+.subpage-client-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.subpage-client-logo-item {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subpage-client-logo-item img {
+  max-height: 28px;
+  max-width: 75px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.85;
+}
+
+/* ==========================================================================
    HIGH-CONVERSION DUAL ACTION CARDS (SOLICITAR INFORMACIÓN & HABLAR POR WHATSAPP)
    ========================================================================== */
 .solution-cta-dual-grid {
