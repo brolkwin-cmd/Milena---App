@@ -2035,28 +2035,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px 14px;
+  gap: 10px 12px;
   width: 100%;
   flex-wrap: wrap;
 }
 
 .subpage-client-logo-item {
-  height: 40px;
+  height: 52px;
+  min-width: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 0 2px;
+  padding: 4px 10px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .subpage-client-logo-item img {
-  max-height: 34px;
-  max-width: 82px;
+  max-height: 42px;
+  max-width: 105px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(0%);
-  opacity: 0.95;
+  opacity: 1;
   transition: all 0.2s ease;
   display: block;
 }
