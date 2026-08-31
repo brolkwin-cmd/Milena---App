@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="100%" height="100%">
+  <g transform="translate(5, 5)">
+    <path d="M5 20 C5 9 14 2 25 2 C36 2 45 9 45 20 C45 31 36 38 25 38 C14 38 5 31 5 20 Z" fill="none" stroke="#B91C1C" stroke-width="4"/>
+    <path d="M16 20 C16 15 20 11 25 11 C30 11 34 15 34 20 C34 25 30 29 25 29 C20 29 16 25 16 20 Z" fill="#1E3A8A"/>
+    <polygon points="25,2 38,10 32,15 25,6" fill="#B91C1C"/>
+    <text x="52" y="27" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="22" fill="#1E3A8A" letter-spacing="1.5">OPAIN</text>
+    <text x="53" y="37" font-family="'Montserrat', sans-serif" font-weight="700" font-size="6.5" fill="#64748B" letter-spacing="1">EL DORADO BOGOTA</text>
+  </g>
+</svg>

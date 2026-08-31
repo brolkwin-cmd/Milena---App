@@ -121,14 +121,84 @@
 
             <!-- Top Floating Badge: DIAN 100% -->
             <g transform="translate(6, 14)" filter="url(#shadowFeel)">
-              <rect width="54" height="18" rx="9" fill="#0090CC"/>
-              <text x="27" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="7" font-weight="bold" text-anchor="middle">100% DIAN</text>
+            <g transform="translate(70, 18)" opacity="0.95" filter="url(#shadowFeel)">
+              <path d="M22 35 C12 35 4 27 4 17 C4 8 11 1 20 1 C23 1 26 2 28 4 C32 -1 39 -1 44 3 C48 1 53 2 56 6 C62 7 66 12 66 18 C66 27 58 35 48 35 Z" fill="url(#cloudGrad)"/>
+              <!-- Data sync wave lines inside cloud -->
+              <path d="M22 20 Q32 14 42 20 T62 20" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M26 26 Q36 20 46 26 T58 26" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.6"/>
             </g>
 
-            <!-- Right Floating Badge: &lt; 1s CLOUD -->
-            <g transform="translate(106, 126)" filter="url(#shadowFeel)">
-              <rect width="52" height="18" rx="9" fill="#0284C7"/>
-              <text x="26" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="7" font-weight="bold" text-anchor="middle">&lt; 1s CLOUD</text>
+            <!-- Connected Server/Cloud Sync Nodes -->
+            <g transform="translate(18, 30)">
+              <circle cx="10" cy="10" r="10" fill="#0090CC" filter="drop-shadow(0 2px 4px rgba(0, 144, 204, 0.3))"/>
+              <path d="M6 10 L9 13 L14 7" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+
+            <g transform="translate(18, 120)">
+              <rect width="40" height="18" rx="9" fill="#10B981" filter="drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3))"/>
+              <text x="20" y="12" fill="#FFF" font-size="7.5" font-family="sans-serif" font-weight="bold" text-anchor="middle">DIAN OK</text>
+            </g>
+
+            <!-- Electronic Invoice Document (Dominant Foreground Object) -->
+            <g transform="translate(42, 34)" filter="url(#shadowFeel)">
+              <!-- Invoice Sheet -->
+              <rect x="0" y="0" width="76" height="106" rx="8" fill="url(#docGrad)" stroke="#BAE6FD" stroke-width="2"/>
+              
+              <!-- Document Header Bar -->
+              <rect x="0" y="0" width="76" height="22" rx="8" fill="#0090CC"/>
+              <rect x="0" y="14" width="76" height="8" fill="#0090CC"/>
+              
+              <!-- Invoice Icon & Brand in Header -->
+              <circle cx="12" cy="11" r="5" fill="#FFFFFF"/>
+              <circle cx="12" cy="11" r="2.5" fill="#0090CC"/>
+              <text x="22" y="14" fill="#FFFFFF" font-family="'Montserrat', sans-serif" font-weight="bold" font-size="7.5" letter-spacing="0.5">FACTURA</text>
+              <rect x="56" y="8" width="14" height="6" rx="3" fill="#00BFFC"/>
+
+              <!-- Invoice Rows & Data Lines -->
+              <!-- Row 1 -->
+              <rect x="8" y="30" width="34" height="4" rx="2" fill="#0284C7"/>
+              <rect x="46" y="30" width="22" height="4" rx="2" fill="#94A3B8"/>
+              
+              <!-- Row 2 -->
+              <rect x="8" y="38" width="28" height="3" rx="1.5" fill="#CBD5E1"/>
+              <rect x="52" y="38" width="16" height="3" rx="1.5" fill="#CBD5E1"/>
+              
+              <!-- Row 3 -->
+              <rect x="8" y="45" width="38" height="3" rx="1.5" fill="#CBD5E1"/>
+              <rect x="50" y="45" width="18" height="3" rx="1.5" fill="#CBD5E1"/>
+
+              <!-- Row 4 -->
+              <rect x="8" y="52" width="30" height="3" rx="1.5" fill="#CBD5E1"/>
+              <rect x="54" y="52" width="14" height="3" rx="1.5" fill="#CBD5E1"/>
+
+              <!-- Divider -->
+              <line x1="8" y1="60" x2="68" y2="60" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="2 2"/>
+
+              <!-- Total Row Highlight -->
+              <rect x="8" y="66" width="22" height="5" rx="2.5" fill="#0F172A"/>
+              <rect x="42" y="66" width="26" height="5" rx="2.5" fill="#0090CC"/>
+
+              <!-- Digital CUFE / QR Code Placeholder -->
+              <g transform="translate(8, 77)">
+                <rect x="0" y="0" width="22" height="22" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+                <!-- QR Dots Matrix Pattern -->
+                <rect x="2" y="2" width="6" height="6" fill="#0090CC"/>
+                <rect x="14" y="2" width="6" height="6" fill="#0090CC"/>
+                <rect x="2" y="14" width="6" height="6" fill="#0090CC"/>
+                <rect x="10" y="6" width="2" height="2" fill="#0F172A"/>
+                <rect x="6" y="10" width="2" height="2" fill="#0F172A"/>
+                <rect x="10" y="10" width="4" height="4" fill="#00BFFC"/>
+                <rect x="14" y="14" width="3" height="3" fill="#0F172A"/>
+              </g>
+
+              <!-- Online Cloud Sync Badge / Digital Stamp -->
+              <g transform="translate(34, 78)">
+                <rect x="0" y="0" width="34" height="20" rx="4" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+                <circle cx="8" cy="10" r="4" fill="#22C55E"/>
+                <path d="M6 10 L7.5 11.5 L10 8.5" stroke="#FFF" stroke-width="1.2" stroke-linecap="round"/>
+                <text x="14" y="9" fill="#15803D" font-size="5" font-family="sans-serif" font-weight="bold">VALIDADO</text>
+                <text x="14" y="15" fill="#16A34A" font-size="4.5" font-family="sans-serif" font-weight="600">&lt; 1 SEG</text>
+              </g>
             </g>
           </svg>
         </div>
@@ -147,14 +217,28 @@
           <div class="subpage-feat-icon" style="color:#0090CC;">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
           </div>
-          <span class="subpage-feat-text" data-es="Facturación electrónica, notas crédito y débito" data-en="Electronic invoicing, credit &amp; debit notes">Facturación electrónica, notas crédito y débito</span>
+          <span class="subpage-feat-text" data-es="Facturación electrónica masiva con validación DIAN" data-en="Bulk e-invoicing with instant DIAN approval">Facturación electrónica masiva con validación DIAN</span>
         </div>
 
         <div class="subpage-feat-item">
           <div class="subpage-feat-icon" style="color:#0090CC;">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
           </div>
-          <span class="subpage-feat-text" data-es="Nómina electrónica y Documento Soporte" data-en="Electronic payroll &amp; support documents">Nómina electrónica y Documento Soporte</span>
+          <span class="subpage-feat-text" data-es="Nómina electrónica y transmisiones quincenales" data-en="Electronic payroll &amp; biweekly transmissions">Nómina electrónica y transmisiones quincenales</span>
+        </div>
+
+        <div class="subpage-feat-item">
+          <div class="subpage-feat-icon" style="color:#0090CC;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <span class="subpage-feat-text" data-es="Documento soporte electrónico a no obligados" data-en="Electronic support document for non-obligated">Documento soporte electrónico a no obligados</span>
+        </div>
+
+        <div class="subpage-feat-item">
+          <div class="subpage-feat-icon" style="color:#0090CC;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <span class="subpage-feat-text" data-es="Sistema POS electrónico para puntos de venta" data-en="Electronic POS system for retail points">Sistema POS electrónico para puntos de venta</span>
         </div>
 
         <div class="subpage-feat-item">
@@ -162,20 +246,6 @@
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           </div>
           <span class="subpage-feat-text" data-es="Registro de facturas como título valor en RADIAN" data-en="Invoice factoring registration in RADIAN">Registro de facturas como título valor en RADIAN</span>
-        </div>
-
-        <div class="subpage-feat-item">
-          <div class="subpage-feat-icon" style="color:#0090CC;">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          </div>
-          <span class="subpage-feat-text" data-es="Sistema POS electrónico para puntos de venta" data-en="Electronic POS system for retail points">Sistema POS electrónico para puntos de venta</span>
-        </div>
-
-        <div class="subpage-feat-item">
-          <div class="subpage-feat-icon" style="color:#0090CC;">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-          </div>
-          <span class="subpage-feat-text" data-es="Validación previa XML en menos de 1 segundo" data-en="Real-time XML pre-validation in &lt; 1s">Validación previa XML en menos de 1 segundo</span>
         </div>
 
         <div class="subpage-feat-item">
@@ -198,14 +268,14 @@
           <div class="subpage-check-icon" style="background:#E0F2FE; color:#0090CC;">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <span class="subpage-check-text" data-es="+20 años respaldando operaciones críticas" data-en="+20 years supporting mission-critical ops">+20 años respaldando operaciones críticas</span>
+          <span class="subpage-check-text" data-es="Proveedor tecnológico autorizado por la DIAN con alta disponibilidad (99.9%)" data-en="DIAN-authorized technology provider with 99.9% high availability">Proveedor tecnológico autorizado por la DIAN con alta disponibilidad (99.9%)</span>
         </div>
 
         <div class="subpage-check-item">
           <div class="subpage-check-icon" style="background:#E0F2FE; color:#0090CC;">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <span class="subpage-check-text" data-es="Proveedor tecnológico con alta disponibilidad (99.9%)" data-en="Tech provider with high uptime (99.9%)">Proveedor tecnológico con alta disponibilidad (99.9%)</span>
+          <span class="subpage-check-text" data-es="+20 años respaldando operaciones críticas" data-en="+20 years supporting mission-critical ops">+20 años respaldando operaciones críticas</span>
         </div>
 
         <div class="subpage-check-item">
@@ -240,13 +310,13 @@
       </button>
 
       <!-- Right: Hablar por WhatsApp -->
-      <a href="https://wa.me/573215734798?text=Hola%20Milena,%20conoc%C3%AD%20BPM%20en%20ANDICOM%20y%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20FEEL." class="btn-dual-card btn-dual-wa dynamic-wa-link" target="_blank" rel="noopener noreferrer" style="border: 1.5px solid #22C55E;">
+      <a href="https://wa.me/573215734798?text=Hola%20Milena,%20quiero%20conocer%20c%C3%B3mo%20FEEL%20optimiza%20la%20facturaci%C3%B3n%20de%20mi%20empresa." class="btn-dual-card btn-dual-wa dynamic-wa-link" target="_blank" rel="noopener noreferrer" style="border: 1.5px solid #22C55E;">
         <div class="btn-dual-icon-box">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
         <div>
           <div class="btn-dual-title" data-es="Hablar por WhatsApp" data-en="Chat on WhatsApp">Hablar por WhatsApp</div>
-          <div class="btn-dual-sub" data-es="Conversar ahora con Milena" data-en="Chat directly with Milena">Conversar ahora con Milena</div>
+          <div class="btn-dual-sub" data-es="Asesoría personalizada con Milena" data-en="Personalized advice with Milena">Asesoría personalizada con Milena</div>
         </div>
       </a>
     </div>
@@ -260,11 +330,11 @@
       </div>
       
       <div class="subpage-client-row">
+        <div class="subpage-client-logo-item"><img src="../assets/logos/Zapatoca.webp" alt="Zapatoca"></div>
+        <div class="subpage-client-logo-item"><img src="../assets/logos/Inmobiliaria-Ospina.webp" alt="Ospina"></div>
+        <div class="subpage-client-logo-item"><img src="../assets/logos/citiparking.svg" alt="City Parking - Indigo"></div>
         <div class="subpage-client-logo-item"><img src="../assets/logos/Fedex.webp" alt="FedEx"></div>
-        <div class="subpage-client-logo-item"><img src="../assets/logos/Rabelo-Foods.webp" alt="Rabelo"></div>
-        <div class="subpage-client-logo-item"><img src="../assets/logos/Fiduprevisora.webp" alt="Previsora Seguros"></div>
-        <div class="subpage-client-logo-item"><img src="../assets/logos/Frontier.webp" alt="Frontera Energy"></div>
-        <div class="subpage-client-logo-item"><img src="../assets/logos/Secretaria-de-Mobilidad.webp" alt="Movilidad"></div>
+        <div class="subpage-client-logo-item"><img src="../assets/logos/Rabelo-Foods.webp" alt="Rabelo Foods"></div>
       </div>
     </div>
 
@@ -326,8 +396,9 @@
         <div class="sticky-mgr-status"><span class="status-dot-pulse"></span> <span data-es="Gerente Mercadeo y Ventas" data-en="Marketing &amp; Sales Manager">Gerente Mercadeo y Ventas</span></div>
       </div>
     </a>
-    <button class="sticky-chat-cta" data-open-lead-modal data-service="FEEL" style="border:none; cursor:pointer;">
-      <span data-es="Solicitar info" data-en="Request info">Solicitar info</span>
+    <button class="sticky-chat-cta" type="button" data-vcard style="border:none; cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+      <span data-es="Guardar contacto" data-en="Save Contact">Guardar contacto</span>
     </button>
   </div>
 
